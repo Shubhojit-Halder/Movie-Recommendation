@@ -27,7 +27,7 @@ const App = () => {
       }
     };
     getRecommendation();
-  }, [movie]);
+  }, [search,movie]);
   console.log(recommendedMovies);
 
   return (
@@ -44,6 +44,7 @@ const App = () => {
             );
           })}
       </select>
+      <button onClick={()=>setSearch(!search)}></button>
       {recommendedMovies != [] &&
         recommendedMovies.map((data, idx) => {
           return (
